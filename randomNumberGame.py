@@ -79,6 +79,7 @@ def Game():
                     break
                 continue
             if guess == randomInt:
+                guessAmount = guessAmount + 1
                 print("\n" + '{:^70s}'.format("Congratulations! The number was indeed %d") %randomInt)
                 print('{:^70s}'.format("This took you %d Guesses!\n") %guessAmount)
                 break
@@ -88,7 +89,7 @@ def Game():
     while True:
         retry = input("Would you like to Retry? Y/n ")
         if retry == "" or retry.lower() == "y":
-            print()
+            Game()
             break
         elif retry.lower() == "n":
             sys.exit()
